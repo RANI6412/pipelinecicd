@@ -13,13 +13,7 @@ pipeline {
 
         stage('Run Python') {
             steps {
-                bat '''
-                    set PYTHONHOME=
-                    set PYTHONPATH=
-                    py --version
-                    py -c "import encodings; print('Python is working')"
-                    py arthtest.py
-                '''
+                bat 'py -3.16 arthtest.py'
             }
         }
     }
