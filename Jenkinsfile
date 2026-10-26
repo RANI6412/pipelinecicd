@@ -13,7 +13,7 @@ pipeline {
 
         stage('Run Python') {
             steps {
-                bat 'py -3.16 arthtest.py'
+                bat 'py -3.13 arthtest.py'
             }
         }
     }
