@@ -1,4 +1,5 @@
 
+
 pipeline {
     agent any
 
@@ -12,14 +13,15 @@ pipeline {
 
         stage('Run Python') {
             steps {
-                bat 'py arthtest.py'
+                bat '''
+                    set PYTHONHOME=
+                    set PYTHONPATH=
+                    py --version
+                    py -c "import encodings; print('Python is working')"
+                    py arthtest.py
+                '''
             }
         }
     }
-
-    post {
-        success {
-            echo 'Python pipeline completed successfully!'
-        }
-    }
 }
+
